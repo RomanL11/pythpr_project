@@ -1,0 +1,27 @@
+import pyttsx3 #импортируем
+
+print("Text To Speech")
+
+engine = pyttsx3.init() #инициализируем
+
+engine.setProperty("rate", 130) #скорость речи
+engine.setProperty("volume", 1.0) #громкость
+
+#голоса
+english_voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_DAVID_11.0"
+russian_voice_id = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_RU-RU_IRINA_11.0"
+
+a = input() 
+b = input()
+
+#озвучка на английском
+engine.setProperty("voice", english_voice_id)
+engine.say(a)
+
+#озвучка на русском
+engine.setProperty("voice", russian_voice_id)
+engine.say(b)
+
+engine.runAndWait()
+
+print("Конец")
